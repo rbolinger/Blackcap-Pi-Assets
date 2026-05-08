@@ -1,27 +1,244 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blackcap Pi</title>
+
+  <link rel="icon" href="https://raw.githubusercontent.com/rbolinger/Blackcap-Pi-Assets/main/images/blackcap_pi_logo.ico" type="image/x-icon">
+
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.5; }
-    img { max-width: 100%; border-radius: 12px; border: 1px solid #ddd; }
-    section { margin: 40px 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      line-height: 1.5;
+      color: #111827;
+      background: #fffaf3;
+    }
+
+    h1 { font-size: 3rem; margin-bottom: 0.25rem; }
+    h2 { margin-top: 3rem; }
+    h3 { margin-top: 2rem; }
+
+    .hero {
+      padding: 36px;
+      border-radius: 24px;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: #4b5563;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      background: white;
+      display: block;
+    }
+
+    /* MEDIA BLOCK */
+    .media {
+      margin: 20px 0 18px 0;
+      max-width: 720px;
+    }
+
+    .media img {
+      width: 100%;
+    }
+
+    .media.no-border img {
+      border: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .media-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+
+    /* Centered version (for fruit image only) */
+    .media.center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      padding: 20px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 48px;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    .hero-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .hero-logo {
+      width: 180px;
+      height: auto;
+      flex-shrink: 0;
+      margin-left: 20px;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 24px 12px; }
+      .hero { padding: 28px 24px; }
+
+      .hero-header { gap: 12px; }
+
+      .hero-header h1 {
+        font-size: 2.6rem;
+        line-height: 1.15;
+        max-width: 65%;
+      }
+
+      .hero-logo {
+        width: 120px;
+        margin-left: 0;
+        margin-right: -6px;
+      }
+
+      .media {
+        margin: 16px 0 14px 0;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-header h1 {
+        font-size: 2.35rem;
+        max-width: 60%;
+      }
+
+      .hero-logo {
+        width: 105px;
+      }
+    }
   </style>
+
 </head>
+
 <body>
-  <h1>🫐 Blackcap Pi</h1>
-  <p>A Raspberry Pi + e-ink kitchen display for weekly menus, recipe mode, and smart icon footers.</p>
+  <section class="hero">
+    <div class="hero-header">
+      <h1>🫐 Blackcap Pi</h1>
+      <img
+        src="https://raw.githubusercontent.com/rbolinger/Blackcap-Pi-Assets/main/images/blackcap_pi_color.png"
+        alt="Blackcap Pi Logo"
+        class="hero-logo">
+    </div>
 
-  <section>
-    <h2>🎬 Rendering a Recipe</h2>
-    <img src="images/recipe-render.gif" alt="Rendering a recipe on Blackcap Pi">
+    <p class="tagline">
+      A Raspberry Pi + e-ink kitchen display for weekly menus, recipe mode, and smart icon footers.
+    </p>
+
+    <p>
+      <strong>Blackcap Pi</strong> turns a simple published Google Sheet into a calm, always-on menu display with
+      automatically generated visual icons based on your weekly menu.
+    </p>
+
+    <p>
+      The name comes from the <strong>Blackcap</strong> (<em>Rubus occidentalis</em>), a type of black raspberry that
+      tastes like a traditional raspberry but has a deep, dark color—fitting for a project built around the
+      black-and-white simplicity and efficiency of an e-ink display. Also, “Inky Pi” was already taken.
+    </p>
+
+    <!-- Fruit (centered) -->
+    <div class="media no-border center">
+      <img
+        src="https://raw.githubusercontent.com/rbolinger/Blackcap-Pi-Assets/main/images/blackcap.png"
+        alt="Blackcap fruit">
+      <div class="media-caption"><em>Fresh blackcap berries (aka black raspberries).</em></div>
+    </div>
+
+    <p style="font-size: 0.95rem; color: #6b7280;">
+      Curious about the fruit? Learn more about
+      <a href="https://en.wikipedia.org/wiki/Rubus_occidentalis" target="_blank" rel="noopener noreferrer">
+        <em>Rubus occidentalis</em>
+      </a>.
+    </p>
+
+    <a class="button" href="https://github.com/rbolinger/Blackcap-Pi">View on GitHub</a>
   </section>
 
-  <section>
-    <h2>🔄 Returning to Menu</h2>
-    <img src="images/back-to-menu.gif" alt="Returning Blackcap Pi to menu mode">
-  </section>
+  <h2>📅 Menu Mode with Smart Icons</h2>
+
+  <div class="media">
+    <img
+      src="https://raw.githubusercontent.com/rbolinger/Blackcap-Pi-Assets/main/images/menu-with-icons.png"
+      alt="Blackcap Pi menu mode with generated footer icons">
+    <div class="media-caption"><em>Automatically generated icons based on weekly menu content.</em></div>
+  </div>
+
+  <h2>📱 Live Interaction</h2>
+  <p>Control the display in real time from your phone or tablet.</p>
+
+  <h3>🍽️ Rendering a Recipe</h3>
+
+  <div class="media">
+    <img
+      src="https://raw.githubusercontent.com/rbolinger/Blackcap-Pi-Assets/main/images/recipe-render.gif"
+      alt="Rendering a recipe from the mobile interface">
+    <div class="media-caption"><em>Select a recipe and render it to the display.</em></div>
+  </div>
+
+  <h3>🔄 Returning to Menu</h3>
+
+  <div class="media">
+    <img
+      src="https://raw.githubusercontent.com/rbolinger/Blackcap-Pi-Assets/main/images/back-to-menu.gif"
+      alt="Returning the display to menu mode">
+    <div class="media-caption"><em>Restore the menu display with a single tap.</em></div>
+  </div>
+
+  <h2>✨ Features</h2>
+  <div class="grid">
+    <div class="card">📅 Automated Menu Mode from a published Google Sheet</div>
+    <div class="card">🎨 OCR + Noun Project smart footer icons</div>
+    <div class="card">🍽️ Recipe Mode with cached recipe rendering</div>
+    <div class="card">🌐 Chrome extension for one-click recipe capture</div>
+    <div class="card">📱 Mobile-friendly control interface</div>
+    <div class="card">🖥️ Optimized for Waveshare e-ink displays</div>
+  </div>
+
+  <footer>
+    Built for calm kitchen utility: no notifications, no distractions, just the right information at the right time.
+  </footer>
 </body>
 </html>
